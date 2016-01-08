@@ -12,20 +12,16 @@ public class QuickSort {
 		int i = left;
 		int j = right + 1;
 		while (true) {
-			while (a[++i] < a[left]) {
-				if (i == right)
-					break;
-			}
-			while (a[left] < a[--j]) {
-				if (j == left)
-					break;
-			}
+			while (a[++i] < a[left] && i < right)
+				;
+			while (a[left] < a[--j] && j > left)
+				;
 			if (i >= j)
 				break;
 			swap(a, i, j);
 		}
 		swap(a, left, j);
-		return j;
+		return i;
 	}
 
 	void quickSort(int[] a, int left, int right) {
@@ -38,7 +34,7 @@ public class QuickSort {
 
 	public static void main(String[] args) {
 		QuickSort quick = new QuickSort();
-		int a[] = { 7, 4, 8, 1, 9, 3, 11, 15, 6, 6 };
+		int a[] = { 2, 1 };
 		// int a[] = { 7, 7, 1, 2, 6, 6, 4 };
 		quick.quickSort(a, 0, a.length - 1);
 		for (int i : a)
