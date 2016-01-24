@@ -9,6 +9,11 @@ import java.util.LinkedHashMap;
 import java.util.Map.Entry;
 import java.util.Stack;
 
+/**
+ * 使用深度搜索DFS来做拓扑排序
+ * @author lijiong
+ *
+ */
 public class TopologicalSort {
 
 	static class Node {
